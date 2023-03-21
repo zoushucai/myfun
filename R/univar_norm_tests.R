@@ -12,7 +12,7 @@
 #' univar_norm_tests(iris[,1],colnames(iris)[1])
 #'
 univar_norm_tests <- function(x,cn="") {
-  output <- matrix(NA, nrow = 6, ncol = 3)
+  output <- matrix(NA, nrow = 7, ncol = 3)
 
   # Shapiro-Wilk test
   sw_test <- tryCatch(shapiro.test(x), error = function(e) e)
@@ -74,8 +74,20 @@ univar_norm_tests <- function(x,cn="") {
     output[6, 3] <- as.numeric(cvm_test$p.value > 0.05)
   }
 
+  # Jarque-Bera（JB）检验 -- moments 包中的函数
+  jb_test = tryCatch(moments::jarque.test(x), error = function(e) e)
+  if (inherits(jb_test, "error")) {
+    output[7, ] <- rep(NA, 3)
+  } else {
+    output[7, 1] <- jb_test$statistic
+    output[7, 2] <- jb_test$p.value
+    output[7, 3] <- as.numeric(jb_test$p.value > 0.05)
+  }
+
+
+  ####### output #####
   colnames(output) <- c("Statistic", "P-value", "Normality")
-  rownames(output) <- c("Shapiro", "KS", "AD", "Lillie", "SF", "CVM")
+  rownames(output) <- c("Shapiro", "KS", "AD", "Lillie", "SF", "CVM","JB")
   # 顺便输出 qq 图 -- qq 图可以检验任意分布,这里只检验正太分布
   qqnorm(x,main= paste0(cn," Normal Q-Q Plot"));qqline(x,col = 'red');
   return(output)

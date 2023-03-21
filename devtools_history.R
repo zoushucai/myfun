@@ -9,7 +9,7 @@ usethis::use_readme_rmd()
 devtools::build_readme()
 
 usethis::use_gpl3_license()
-
+usethis::use_data_raw()
 
 library(usethis,devtools)
 
@@ -27,8 +27,13 @@ use_import_from("nortest", "ad.test")  # 从包中导入函数
 use_import_from("nortest", "lillie.test")  # 从包中导入函数
 use_import_from("nortest", "sf.test")  # 从包中导入函数
 use_import_from("nortest", "cvm.test")  # 从包中导入函数
+use_import_from("lubridate", "is.Date")  # 从包中导入函数
+
+usethis::use_data_table()
+use_package("data.table")
 
 use_import_from("stats", c("ks.test","shapiro.test"))
+usethis::use_import_from("moments","jarque.test")
 
 use_import_from("stats", c("qqline","qqnorm",'sd'))
 
@@ -38,6 +43,8 @@ use_r("p_load")   # 导入别人包中的函数
 use_r("normality_tests")   # 导入别人包中的函数
 use_r("univar_norm_tests")   # 导入别人包中的函数
 
+use_r("read_csv_files")   # 编写函数
+use_r("add_week_month")
 
 
 # 3.4 生成函数帮助文档
@@ -58,6 +65,7 @@ univar_norm_tests(iris[,4],'ss')
 
 use_test("normality_tests")  # 类似 use_r(), 只不过它创建的是一个测试文件,然后书写你要测试的函数
 use_test("univar_norm_tests")
+library(usethis,devtools)
 
 devtools::test()
 

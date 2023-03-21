@@ -1,6 +1,6 @@
 Package: myfun
 Title: Small functions I think are easy to use
-Version: 0.0.1.0
+Version: 0.0.1.2
 Authors@R: 
     person("Zou", "shucai", , "zscmoyjian@163.com", role = c("aut", "cre"))
 Description: Collect some small functions, mainly because they always forget the name of other people's packages, and only remember this function name.
@@ -10,6 +10,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
     crayon,
+    data.table,
+    lubridate,
+    moments,
     nortest,
     pacman,
     rstudioapi,

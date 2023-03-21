@@ -3,3 +3,4 @@
 ^devtools_history\.R$
 ^README\.Rmd$
 ^LICENSE\.md$
+^data-raw$
