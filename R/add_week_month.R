@@ -1,9 +1,11 @@
-#' @title  根据给定数据框中的日期列,添加月份和周几
+#' @title  根据日期列,添加月份和周几
+#' @description
+#' 根据给定数据框中的日期列,添加月份和周几
 #'
 #' @param df  数据框
 #' @param col_name  字符串,指定的日期列名
 #' @param format  指定日期列的格式, 同as.Date
-#' @param ...   同as.Date
+#' @inheritDotParams base::as.Date -x
 #'
 #' @return  在原有的数据集上增加两列,weekdays,months 列且为因子
 #'

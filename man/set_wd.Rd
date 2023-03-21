@@ -2,7 +2,7 @@
 % Please edit documentation in R/set_wd.R
 \name{set_wd}
 \alias{set_wd}
-\title{Set the working directory. If not, create the working directory. You cannot create the directory recursively}
+\title{Set the working directory.}
 \usage{
 set_wd(path = NULL, ask = FALSE)
 }

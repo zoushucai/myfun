@@ -1,4 +1,7 @@
-#' @title Set the working directory. If not, create the working directory. You cannot create the directory recursively
+#' @title Set the working directory.
+#'
+#' @description
+#' Set the working directory. If not, create the working directory. You cannot create the directory recursively
 #'
 #' @param path NULL (default) or a specific path. Default is to extract the path of the currently opened file (usually .R or .Rmd) using the rstudioapi::getSourceEditorContext function.
 #' @param ask  TRUE or FALSE (default). If TRUE, you can select a folder with the prompt of a dialog.

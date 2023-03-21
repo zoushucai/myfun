@@ -11,12 +11,15 @@ RoxygenNote: 7.2.3
 Imports: 
     crayon,
     data.table,
+    dplyr,
     lubridate,
     moments,
     nortest,
     pacman,
+    psych,
     rstudioapi,
-    stats
+    stats,
+    TTR
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

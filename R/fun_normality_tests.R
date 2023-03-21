@@ -1,15 +1,16 @@
 #' @title 正太分布检验
-#'
+#' @order 1
+#' @describeIn fun_normality_tests 对一个数据框中的数值型做正正态分布检验,主要调用的是 `fun_norm_univar_tests()`
 #' @param df 一个数据框, 会对数据框做数值型检查,只检查带数值型的列
 #'
-#' @return list, 返回一个 list, 每一列的正态分布检验结果存储在list 的元素中, 每个元素是一个矩阵
+#' @return `fun_normality_tests()` 返回一个 list, 每一列的正态分布检验结果存储在list 的元素中, 每个元素是一个矩阵
 #' @export
 #'
 #' @examples
 #' data(iris)
-#' normality_tests(iris)
+#' fun_normality_tests(iris)
 #'
-normality_tests <- function(df) {
+fun_normality_tests <- function(df) {
   # df: 待检验的数据向量,
 
   # 1.检查每一列是否为数字类型
@@ -29,7 +30,7 @@ normality_tests <- function(df) {
   # 循环遍历每一列
   for (i in seq_len(ncol(df))) {
     cn = colnames(df)[i]
-    list_res[[cn]] <- univar_norm_tests(df[, i],cn)
+    list_res[[cn]] <- fun_norm_univar_tests(df[, i],cn)
   }
   cat("\nNormality列表示: 1为正太分布,  0不是正太分布\n")
   return(list_res)

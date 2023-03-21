@@ -1,6 +1,6 @@
 test_that("normality tests", {
   suppressWarnings({
-    res = normality_tests(iris)
+    res = fun_normality_tests(iris)
     expect_type(res, "list")
   })
 

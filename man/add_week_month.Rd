@@ -2,7 +2,7 @@
 % Please edit documentation in R/add_week_month.R
 \name{add_week_month}
 \alias{add_week_month}
-\title{根据给定数据框中的日期列,添加月份和周几}
+\title{根据日期列,添加月份和周几}
 \usage{
 add_week_month(df, col_name, format = "\%Y-\%m-\%d", ...)
 }
@@ -13,7 +13,11 @@ add_week_month(df, col_name, format = "\%Y-\%m-\%d", ...)
 
 \item{format}{指定日期列的格式, 同as.Date}
 
-\item{...}{同as.Date}
+\item{...}{
+  Arguments passed on to \code{\link[base:as.Date]{base::as.Date}}
+  \describe{
+    \item{\code{}}{}
+  }}
 }
 \value{
 在原有的数据集上增加两列,weekdays,months 列且为因子

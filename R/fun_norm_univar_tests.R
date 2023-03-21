@@ -1,17 +1,24 @@
-#' @title  只能进行单变量的正态分布假设
-#'
-#' @description 说明一下,最近发现居然可以写中文了,于是为了方便快捷,反正都是自用,就写中文啦(虽然有警告)
+#' @title 进行单变量的正态分布检验
+#' @order 2
+#' @describeIn fun_normality_tests    进行单变量的正态分布检验, 提供几种不同类型的正态检验方法
+#' - "Shapiro", see [stats::shapiro.test]
+#' - "KS" , see [stats::ks.test]
+#' - "AD" , see [nortest::ad.test]
+#' - "Lillie", see [nortest::lillie.test]
+#' - "SF", see [nortest::sf.test]
+#' - "CVM", see [nortest::cvm.test]
+#' - "JB", see [moments::jarque.test]
 #' @param x 一个数值型向量
-#' @param cn 一个字符串, 与 x 对应的字符串
-#' @return matrix, 一个矩阵, 行是对应正态分布检验的方法,列分别代表 P 值, 统计量,
+#' @param cn 一个字符串, 与 x 对应的字符串, 只用来修改 qq 图上的 title, 使得我们容易区分,这是那个变量的 qq 图而已
+#' @return `fun_norm_univar_tests()` 返回一个矩阵, 行是对应正态分布检验的方法,列分别代表 P 值, 统计量,
 #' 正态分布的判断结果, 结果为 1 表示接受原假设, 是正态分布.0 则相反
 #'
 #' @export
 #' @examples
 #' data(iris)
-#' univar_norm_tests(iris[,1],colnames(iris)[1])
+#' fun_norm_univar_tests(iris[,1],colnames(iris)[1])
 #'
-univar_norm_tests <- function(x,cn="") {
+fun_norm_univar_tests <- function(x,cn="") {
   output <- matrix(NA, nrow = 7, ncol = 3)
 
   # Shapiro-Wilk test
