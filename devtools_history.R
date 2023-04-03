@@ -18,7 +18,7 @@ library(usethis,devtools)
 use_package("rstudioapi")
 use_package("nortest")
 use_package("stats")
-use_package("stats")
+use_package("xtable")
 
 use_import_from("crayon", "blue")  # 从包中导入函数
 use_import_from("crayon", "bold")  # 从包中导入函数
@@ -63,10 +63,14 @@ use_r("fun_describe")
 use_r("fun_describeBy")
 
 use_r("test")
+use_r("bmatrix")
+
+
 
 
 # 3.4 生成函数帮助文档
-devtools::document()  #
+devtools::document()  #x
+
 
 help(set_wd)  # 可以利用 ?函数名  或 help(函数名)  查看生成的帮助文档, 可以进入该函数的Rd文件,点击 预览按钮 查看
 help(p_load)
