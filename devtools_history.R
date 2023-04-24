@@ -62,6 +62,12 @@ use_r("add_log_lag")
 use_r("fun_describe")
 use_r("fun_describeBy")
 
+use_r("fun_repmat_vec")
+use_r("fun_repmat")
+
+use_r("fun_describeBy")
+
+
 use_r("test")
 use_r("bmatrix")
 
@@ -79,7 +85,7 @@ help(normality_tests)
 help(fun_lag)
 help(fun_ROC)
 help(read_csv_files)
-
+help(fun_repmat)
 
 ###########  4 加载并测试你的函数
 devtools::load_all() # 加载该包的所有函数,然后再命令行中进行函数测试
