@@ -78,6 +78,7 @@ use_r("bmatrix")
 devtools::document()  #x
 
 
+
 help(set_wd)  # 可以利用 ?函数名  或 help(函数名)  查看生成的帮助文档, 可以进入该函数的Rd文件,点击 预览按钮 查看
 help(p_load)
 

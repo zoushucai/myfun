@@ -4,19 +4,15 @@
 \alias{fun_load}
 \title{Load Package}
 \usage{
-fun_load(
-  ...,
-  char,
-  install = TRUE,
-  update = getOption("pac_update"),
-  character.only = FALSE
-)
+fun_load(..., char, install = TRUE, type = "binary", character.only = FALSE)
 }
 \arguments{
 \item{...}{
   Arguments passed on to \code{\link[pacman:p_load]{pacman::p_load}}
   \describe{
-    \item{\code{}}{}
+    \item{\code{update}}{logical.  If \code{TRUE} will attempt to update all out of date 
+packages.  Default allows the user to set a \code{"pac_update"} in his/her 
+.Rprofile.}
   }}
 
 \item{char}{Character vector containing packages to load.  If you are calling
@@ -26,10 +22,6 @@ to load to this parameter directly.}
 
 \item{install}{logical.  If \code{TRUE} will attempt to install a package not 
 found in the library.}
-
-\item{update}{logical.  If \code{TRUE} will attempt to update all out of date 
-packages.  Default allows the user to set a \code{"pac_update"} in his/her 
-.Rprofile.}
 
 \item{character.only}{logical. If \code{TRUE} then \code{p_load} will only 
 accept a single input which is a character vector containing the names of 
