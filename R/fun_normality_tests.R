@@ -12,7 +12,6 @@
 #'
 fun_normality_tests <- function(df) {
   # df: 待检验的数据向量,
-
   # 1.检查每一列是否为数字类型
   numeric_cols <- sapply(df, is.numeric)
   # 如果存在非数字类型的列，则过滤掉并发出警告

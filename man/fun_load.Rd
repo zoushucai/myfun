@@ -7,38 +7,21 @@
 fun_load(..., char, install = TRUE, type = "binary", character.only = FALSE)
 }
 \arguments{
-\item{...}{
-  Arguments passed on to \code{\link[pacman:p_load]{pacman::p_load}}
-  \describe{
-    \item{\code{update}}{logical.  If \code{TRUE} will attempt to update all out of date 
-packages.  Default allows the user to set a \code{"pac_update"} in his/her 
-.Rprofile.}
-  }}
+\item{...}{一个包名向量或字符串}
 
-\item{char}{Character vector containing packages to load.  If you are calling
-\code{p_load} from within a function (or just having difficulties calling it 
-using a character vector input) then pass your character vector of packages 
-to load to this parameter directly.}
+\item{char}{包名,字符串}
 
-\item{install}{logical.  If \code{TRUE} will attempt to install a package not 
-found in the library.}
+\item{install}{尝试安装库中找不到的包}
 
-\item{character.only}{logical. If \code{TRUE} then \code{p_load} will only 
-accept a single input which is a character vector containing the names of 
-packages to load.}
+\item{type}{以二进制的形式安装, 或者 "source"}
+
+\item{character.only}{如果为TRUE，则p_load将只接受单个字符串，默认接受向量字符串}
+}
+\value{
+返回值为空, 不可见
 }
 \description{
 加载包,如果该包没有安装,则安装以后再加载
-}
-\examples{
-\dontrun{
-p_load(lattice)
-p_unload(lattice)
-p_load(lattice, foreign, boot, rpart)
-p_loaded()
-p_unload(lattice, foreign, boot, rpart)
-p_loaded()
-}
 }
 \seealso{
 \link[pacman:p_load]{pacman::p_load}

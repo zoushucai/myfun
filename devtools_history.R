@@ -35,7 +35,7 @@ use_import_from("lubridate", "is.Date")  # 从包中导入函数
 use_import_from("dplyr", "lag")  # 从包中导入函数
 
 use_import_from("TTR", "ROC")  # 从包中导入函数
-
+use_import_from("readxl", "read_xlsx")
 use_import_from("psych", c("describe","describeBy"))  # 从包中导入函数
 
 
@@ -48,6 +48,7 @@ usethis::use_import_from("moments","jarque.test")
 
 use_import_from("stats", c("qqline","qqnorm",'sd'))
 
+usethis::use_import_from("utils","install.packages")
 
 use_r("set_wd")   # 编写函数
 use_r("p_load")   # 导入别人包中的函数
@@ -106,8 +107,28 @@ use_test("univar_norm_tests")
 library(usethis,devtools)
 
 devtools::test()
+#' @inherit pacman::p_load
+
+
+path = myfun_example()
+df = read_csv_files(path, pattern = '\\.csv$',full.names = TRUE)
+head(df)
+df
+df[, c("_file_name") := NULL ]
+library(data.table)
+fwrite(df, file=paste0(path,"/000001.csv"),bom=T)
+
+library(writexl)
+write_xlsx(df, path=paste0(path,"/000001.xlsx"))
 
 
 
+path1 = "/Users/zsc/Desktop/未命名文件夹/Fund_副本/FundSummary/上市基金基本信息_19980407_20230530"
+path2 = "/Users/zsc/Desktop/未命名文件夹/Fund_副本/FundSummary/基金主体信息表_19980327_20230530"
+path3 = "/Users/zsc/Desktop/未命名文件夹/Fund_副本/FundSummary/基金代码信息表_19980327_20230530"
+
+df1 = read_xlsx_files(path = path1, pattern = "\\.xlsx$", full.name)
+df2 = read_xlsx_files(path = path2, pattern = "\\.xlsx$")
+df3 = read_xlsx_files(path = path3, pattern = "\\.xlsx$")
 
 use_git()

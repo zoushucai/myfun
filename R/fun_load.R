@@ -1,13 +1,16 @@
 #' @title Load Package
 #' @description
 #' 加载包,如果该包没有安装,则安装以后再加载
-#'
-#' @inherit pacman::p_load
-#' @inheritDotParams pacman::p_load
+#' @param ... 一个包名向量或字符串
+#' @param char 包名,字符串
+#' @param install 尝试安装库中找不到的包
+#' @param type 以二进制的形式安装, 或者 "source"
+#' @param character.only 如果为TRUE，则p_load将只接受单个字符串，默认接受向量字符串
+#' @return 返回值为空, 不可见
 #' @seealso [pacman::p_load]
 #' @export
 
-fun_load = function (..., char, install = TRUE, type = "binary",
+fun_load = function ( ..., char, install = TRUE, type = "binary",
                     character.only = FALSE){
 
   if(!missing(char)){

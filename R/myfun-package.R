@@ -25,11 +25,13 @@
 #' @importFrom pacman p_load
 #' @importFrom psych describe
 #' @importFrom psych describeBy
+#' @importFrom readxl read_xlsx
 #' @importFrom stats ks.test
 #' @importFrom stats qqline
 #' @importFrom stats qqnorm
 #' @importFrom stats sd
 #' @importFrom stats shapiro.test
 #' @importFrom TTR ROC
+#' @importFrom utils install.packages
 ## usethis namespace: end
 NULL

@@ -18,7 +18,8 @@
 #'   }
 #' }
 #' path = myfun_example()
-#' df = read_csv_files(path,full.names = TRUE)
+#' file_list = list.files(path, pattern = '\\.csv$',full.names = TRUE)
+#' df = read_csv_files(file_list)
 #' df2 = add_log_lag(df,'收盘')
 #'
 #'

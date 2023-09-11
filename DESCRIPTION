@@ -17,9 +17,11 @@ Imports:
     nortest,
     pacman,
     psych,
+    readxl,
     rstudioapi,
     stats,
     TTR,
+    utils,
     xtable
 Suggests: 
     testthat (>= 3.0.0)
